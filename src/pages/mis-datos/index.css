@@ -1,0 +1,26 @@
+.container {
+  padding: 33px 17px;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (min-width: 600px) {
+  .container {
+    padding: 58px 17px;
+    margin: 0 auto;
+    max-width: 600px;
+  }
+}
+@media (max-width: 599px) {
+  .container {
+    padding: 33px 17px 92px 17px;
+    margin: 0 auto;
+    max-width: 400px;
+  }
+}
+
+.form {
+  margin-top: 44px;
+}

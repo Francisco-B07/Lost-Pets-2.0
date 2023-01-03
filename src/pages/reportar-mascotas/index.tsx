@@ -1,22 +1,20 @@
 import React, { useState } from "react";
+import { Container } from "react-bootstrap";
 import css from "./index.css";
 import { Link } from "react-router-dom";
 import { Body, Title } from "ui/texts";
 import { ButtonPrimary } from "ui/buttons";
 
-function Home() {
+function ReportarMascotas() {
   return (
     <div className={css.container}>
       <Title>Mascotas perdidas cerca tuyo</Title>
       <div className={css.body}>
-        <Body>
-          Para ver las mascotas reportadas cerca tuyo necesitamos permiso para
-          conocer tu ubicación.
-        </Body>
+        <Body>Mis datos</Body>
         <ButtonPrimary>Dar mi ubicación</ButtonPrimary>
       </div>
     </div>
   );
 }
 
-export { Home };
+export { ReportarMascotas };

@@ -1,0 +1,17 @@
+.footer {
+  background-color: #ff6868;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 8vh;
+}
+
+.logoThePanch {
+  width: 53px;
+  height: auto;
+}
+
+.redes {
+  width: 30px;
+  height: 30px;
+}

@@ -32,6 +32,24 @@ module.exports = {
           },
         ],
       },
+      {
+        test: /\.(jpe?g|png)$/i,
+        loader: "file-loader",
+        options: {
+          name: "/public/icons/[name].[ext]",
+        },
+      },
+      {
+        test: /\.svg$/,
+        use: [
+          {
+            loader: "svg-url-loader",
+            options: {
+              limit: 10000,
+            },
+          },
+        ],
+      },
     ],
   },
   resolve: {
