@@ -1,0 +1,13 @@
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.root {
+  width: 45px;
+  height: 45px;
+  color: #ff6868 !important;
+}

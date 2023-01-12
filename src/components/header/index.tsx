@@ -1,15 +1,40 @@
 import React, { useState } from "react";
 import css from "./index.css";
 import logo from "img/logo.svg";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { BurguerButtons } from "ui/buttons";
+import { useSelectedURL, useUserData } from "hooks/login";
 
 function Header() {
+  const token = localStorage.getItem("auth_token");
+  const email = localStorage.getItem("email");
   const [clicked, setClicked] = useState(false);
+  const [selectedURL, setSelectedURL] = useSelectedURL();
+  const navigate = useNavigate();
+  // var dataUser = useUserData();
+  // console.log(dataUser);
 
-  const handleClick = () => {
+  function handleClick(page: string) {
     setClicked(!clicked);
-  };
+    if (token) {
+      navigate("/" + page);
+    } else {
+      setSelectedURL(page);
+      navigate("/ingresar");
+    }
+  }
+
+  function clickBurguerButtons() {
+    setClicked(!clicked);
+  }
+
+  function cerrarSesion() {
+    if (localStorage.getItem("auth_token")) {
+      localStorage.removeItem("auth_token");
+      localStorage.removeItem("email");
+    }
+    navigate("/");
+  }
 
   return (
     <header className={css.header}>
@@ -17,32 +42,30 @@ function Header() {
         <Link to="/">
           <img src={logo} className={css.imagen} />
         </Link>
-        <BurguerButtons clicked={clicked} handleClick={handleClick} />
+        <BurguerButtons clicked={clicked} handleClick={clickBurguerButtons} />
       </div>
       <div className={`${css.nav} ${clicked ? "" : css.inactive}`}>
-        <Link to="mis-datos" className={css.navLink} onClick={handleClick}>
+        <a className={css.navLink} onClick={() => handleClick("mis-datos")}>
           Mis datos
-        </Link>
-        <Link
-          to="mis-mascotas-reportadas"
+        </a>
+        <a
           className={css.navLink}
-          onClick={handleClick}
+          onClick={() => handleClick("mis-mascotas-reportadas")}
         >
           Mis mascotas <br /> reportadas
-        </Link>
-        <Link
-          to="reportar-mascotas"
+        </a>
+        <a
           className={css.navLink}
-          onClick={handleClick}
+          onClick={() => handleClick("reportar-mascotas")}
         >
           Reportar <br /> Mascotas
-        </Link>
+        </a>
         <div className={css.userContainer}>
-          <p className={css.user}>email</p>
+          <p className={css.user}>{token ? email : ""}</p>
 
-          <Link to="/" className={css.cerrarSesion} onClick={handleClick}>
+          <a className={css.cerrarSesion} onClick={cerrarSesion}>
             CERRAR SESIÓN
-          </Link>
+          </a>
         </div>
       </div>
     </header>

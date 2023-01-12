@@ -3,10 +3,11 @@ import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 import { AppRoutes } from "./router";
 import { RecoilRoot } from "recoil";
+import { SpinnerComponent } from "ui/spinnerComponent";
 
 const root = ReactDOM.createRoot(document.querySelector(".root"));
 root.render(
-  <Suspense fallback={null}>
+  <Suspense fallback={<SpinnerComponent />}>
     <RecoilRoot>
       <BrowserRouter>
         <AppRoutes />

@@ -32,7 +32,39 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 189px;
+    min-height: 189px;
     justify-content: space-between;
   }
+}
+.map {
+  margin-top: 36px;
+  display: flex;
+  justify-content: center;
+}
+.instrucciones {
+  margin-top: 18px;
+  margin-bottom: 36px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  text-transform: uppercase;
+  color: #000000;
+}
+.buttonCancelar {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+  color: #000000;
+
+  background: #cdcdcd;
+  border-radius: 4px;
+  border: none;
+  height: 50px;
+  width: 335px;
+  margin: 0 auto;
+  margin-top: 18px;
 }

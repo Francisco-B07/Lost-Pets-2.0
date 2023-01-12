@@ -24,3 +24,11 @@
   text-transform: uppercase;
   color: #000000;
 }
+
+.input {
+  width: 100%;
+}
+
+.textArea {
+  height: 127px;
+}

@@ -28,12 +28,16 @@
   max-width: 450px;
 }
 
+.noBody {
+  display: none;
+}
+
 @media (min-width: 600px) {
   .body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 189px;
+    min-height: 189px;
     justify-content: space-between;
   }
 }

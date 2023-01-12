@@ -2,12 +2,12 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 import { Home } from "pages/home";
 import { Layout } from "components/layout";
-import { MisDatos } from "pages/mis-datos";
-import { MisMascotasReportadas } from "pages/mis-mascotas-reportadas";
-import { ReportarMascotas } from "pages/reportar-mascotas";
-import { Ingresar } from "pages/ingresar";
-import { Test } from "pages/test";
-import { Password } from "pages/password";
+import { MisDatos } from "pages/misDatos";
+import { MisMascotasReportadas } from "pages/myPetsReportadas";
+import { ReportarMascotas } from "pages/reportarPet";
+import { Ingresar } from "pages/login";
+import { PasswordPage } from "pages/login/password";
+import { EditarMascotaReportada } from "pages/editarPetReportada";
 function AppRoutes() {
   return (
     <Routes>
@@ -19,9 +19,12 @@ function AppRoutes() {
           element={<MisMascotasReportadas />}
         />
         <Route path="reportar-mascotas" element={<ReportarMascotas />} />
+        <Route
+          path="editar-mascota-reportada/:petId"
+          element={<EditarMascotaReportada />}
+        />
         <Route path="ingresar" element={<Ingresar />} />
-        <Route path="password" element={<Password />} />
-        <Route path="test" element={<Test />} />
+        <Route path="password" element={<PasswordPage />} />
       </Route>
     </Routes>
   );
