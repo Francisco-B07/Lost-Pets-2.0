@@ -41,7 +41,7 @@ function PetCard(props: PetCardProps) {
         </div>
         {searchUserAdmin ? (
           <div className={css.contenedorEditar}>
-            <img src={pencil} onClick={goEdit} />
+            <img src={pencil} className={css.pencil} onClick={goEdit} />
             <p className={css.mensajeEncontrado}>{encontrado}</p>
           </div>
         ) : (

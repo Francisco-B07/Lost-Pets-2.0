@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import css from "./index.css";
 import { useNavigate } from "react-router-dom";
 import { ButtonPrimary } from "ui/buttons";
@@ -83,7 +83,7 @@ function MyDataForm() {
         type="string"
         name="fullName"
         label="NOMBRE"
-        fullName={token ? userData.fullName : ""}
+        fullName={token ? userData?.fullName : ""}
       />
 
       <TextField type="password" name="password" label="CONTRASEÑA" />

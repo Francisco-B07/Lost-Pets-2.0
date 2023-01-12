@@ -73,3 +73,11 @@
   color: rgb(42, 231, 42);
   margin-top: 20px;
 }
+.pencil {
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.pencil:hover {
+  transform: scale(1.1);
+}

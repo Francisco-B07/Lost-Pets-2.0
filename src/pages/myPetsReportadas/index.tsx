@@ -25,6 +25,7 @@ function MisMascotasReportadas() {
   return (
     <div className={css.container}>
       <Title>Mis mascotas reportadas</Title>
+
       <div className={css.body}>
         {myPets.map((pet) => (
           <PetCard
