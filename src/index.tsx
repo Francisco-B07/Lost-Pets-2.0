@@ -5,13 +5,16 @@ import { AppRoutes } from "./router";
 import { RecoilRoot } from "recoil";
 import { SpinnerComponent } from "ui/spinnerComponent";
 
-const root = ReactDOM.createRoot(document.querySelector(".root"));
-root.render(
-  <Suspense fallback={<SpinnerComponent />}>
-    <RecoilRoot>
-      <BrowserRouter>
-        <AppRoutes />
-      </BrowserRouter>
-    </RecoilRoot>
-  </Suspense>
-);
+function RootApp() {
+  return (
+    <Suspense fallback={<SpinnerComponent />}>
+      <RecoilRoot>
+        <BrowserRouter>
+          <AppRoutes />
+        </BrowserRouter>
+      </RecoilRoot>
+    </Suspense>
+  );
+}
+
+ReactDOM.render(<RootApp />, document.getElementById("root"));
