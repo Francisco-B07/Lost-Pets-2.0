@@ -7,6 +7,7 @@ import { useSelectedURL, useUserData } from "hooks/login";
 
 function Header() {
   const token = localStorage.getItem("auth_token");
+
   const email = localStorage.getItem("email");
   const [clicked, setClicked] = useState(false);
   const [selectedURL, setSelectedURL] = useSelectedURL();
@@ -63,7 +64,10 @@ function Header() {
         <div className={css.userContainer}>
           <p className={css.user}>{token ? email : ""}</p>
 
-          <a className={css.cerrarSesion} onClick={cerrarSesion}>
+          <a
+            className={`${token ? css.cerrarSesion : css.inactiveCerrarSesion}`}
+            onClick={cerrarSesion}
+          >
             CERRAR SESIÓN
           </a>
         </div>

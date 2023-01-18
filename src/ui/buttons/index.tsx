@@ -14,7 +14,9 @@ export function ButtonPrimary(props: ButtonPrimaryProps) {
 
   function handleSpinner() {
     setSpinner(true);
-    onClick();
+    if (onClick) {
+      onClick();
+    }
   }
 
   return (
