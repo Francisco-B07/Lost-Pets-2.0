@@ -32,7 +32,6 @@ function EditarMascotaReportada() {
   async function getPet() {
     const pet = await buscarPetAEditar(petId);
     setPet(pet);
-    console.log(pet);
   }
 
   useEffect(() => {
