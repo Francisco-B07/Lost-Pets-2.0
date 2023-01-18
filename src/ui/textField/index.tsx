@@ -19,13 +19,13 @@ export function TextField(props: TextFieldProp) {
       <input
         type={type}
         className={`form-control ${css.input}`}
-        id="floatingInput"
+        id={name}
         placeholder={label}
         name={name}
         defaultValue={fullName}
       />
 
-      <label htmlFor="floatingInput">{label}</label>
+      <label htmlFor={name}>{label}</label>
     </div>
   );
 }
