@@ -1,8 +1,21 @@
-# Lost-Pets-2.0
+# Web de mascotas perdidas (React)
 
-link a la app:
-https://desafio-m8-apx.web.app/
+Frontend construido en React para la web de Mascotas Perdidas.
+
+# Tecnologías usadas
+
+- React
+- Typescript
+- Webpack
+- Recoil
+- Mapbox
+- Sendgrid
 
 
-link del backend:
+# Link a la web
+
+- https://desafio-m8-apx.web.app/
+
+
+# link del backend:
 https://github.com/Francisco-B07/Lost-Pets
